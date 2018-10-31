@@ -1,0 +1,221 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WS - TSI",
+		"_postman_id": "d593b4af-c88d-f16a-c879-9ee9ad489985",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar Usuário",
+					"request": {
+						"url": "http://127.0.0.1/web/usuario/create",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissao",
+									"value": "5bd8e9fd0664a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Rafaela",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "rafaela",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "123456",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuário",
+					"request": {
+						"url": "http://127.0.0.1/web/usuario/list",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissao",
+									"value": "5bd8e9fd0664a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "filter",
+									"value": "Kevin",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhes Usuário",
+					"request": {
+						"url": "http://127.0.0.1/web/usuario/detalhes",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissao",
+									"value": "5bd8e9fd0664a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Usuário",
+					"request": {
+						"url": "http://127.0.0.1/web/usuario/deletar",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissao",
+									"value": "5bd8e9fd0664a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Usuário",
+					"request": {
+						"url": "http://127.0.0.1/web/usuario/update",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "permissao",
+									"value": "5bd8e9fd0664a",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Rafael",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "usuario",
+									"value": "rafinha2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "senha",
+									"value": "123456",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://127.0.0.1/web/login/validaLogin",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "usuario",
+							"value": "rafael3",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "senha",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
