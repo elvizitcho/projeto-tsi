@@ -166,4 +166,73 @@ class Usuario extends CI_Controller {
             )));
         }
     }
+
+    public function createToken() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('nome', 'Nome', 'required|min_length[5]|max_length[128]');
+
+        if ($this->form_validation->run() == FALSE) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => validation_errors('<p class="red-text text-darken-2">', '</p>')
+            )));
+        }
+
+        $usuario = array(
+            'nome'      => $this->input->post('nome'),
+            'token'     => uniqid(),
+            'status'    => 1,
+            'permissao' => uniqid()
+        );
+
+        $this->load->model('Usuario_Model', 'model');
+
+        $idUsuario = $this->model->create($usuario);
+
+        if ($idUsuario == false) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => 'Falha ao salvar usuário no banco de dados'
+            )));
+        } else {
+            die(json_encode(array(
+                'sucesso'  => true,
+                'id'       => $idUsuario
+            )));
+        }
+    }
+
+    public function updateToken() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'ID', 'required|is_natural');
+        $this->form_validation->set_rules('nome', 'Nome', 'required|min_length[5]|max_length[128]');
+
+        if ($this->form_validation->run() == FALSE) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => validation_errors('<p class="red-text text-darken-2">', '</p>')
+            )));
+        }
+
+        $usuario = array(
+            'nome'      => $this->input->post('nome'),
+            'status'    => 1
+        );
+
+        $this->load->model('Usuario_Model', 'model');
+
+        $idUsuario = $this->model->update($this->input->post('id'), $usuario);
+
+        if ($idUsuario == false) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => 'Falha ao salvar usuário no banco de dados'
+            )));
+        } else {
+            die(json_encode(array(
+                'sucesso'  => true
+            )));
+        }
+    }
+
 }
