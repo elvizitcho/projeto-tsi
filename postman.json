@@ -42,10 +42,12 @@
 			"description": "",
 			"order": [
 				"ba3bb70e-c2d2-8fb8-eb52-e43f387b92a4",
+				"726e4509-331b-c2fb-afb4-ac5d65366b2c",
 				"b640566c-6a5f-3e23-2887-2d63d7cc5870",
 				"a14bf087-c15b-3c02-e976-3157a0b6dddf",
 				"c036c3a9-d166-c74a-eb6b-a459cfa5589b",
-				"464a2d4f-456c-4cd0-8825-2fc164be457c"
+				"464a2d4f-456c-4cd0-8825-2fc164be457c",
+				"aa046cc7-0561-e27e-863a-470bd0299ab3"
 			],
 			"folders_order": [],
 			"owner": "5796404",
@@ -255,7 +257,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/usuario/update",
+			"url": "http://127.0.0.1/webservice/usuario/update",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
@@ -286,7 +288,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/login/validaLogin",
+			"url": "http://127.0.0.1/webservice/login/validaLogin",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
@@ -362,6 +364,41 @@
 			"helperAttributes": {},
 			"time": 1541457593445,
 			"name": "Criar Dispositivo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "726e4509-331b-c2fb-afb4-ac5d65366b2c",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/usuario/createToken",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "nome",
+					"value": "Rafaela",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541461055799,
+			"name": "Criar Token",
 			"description": "",
 			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
 			"responses": []
@@ -462,7 +499,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/usuario/detalhes",
+			"url": "http://127.0.0.1/webservice/usuario/detalhes",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
@@ -501,6 +538,48 @@
 			"helperAttributes": {},
 			"time": 1541454748115,
 			"name": "Detalhes Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "aa046cc7-0561-e27e-863a-470bd0299ab3",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/usuario/updateToken",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "nome",
+					"value": "Rafael",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541461113697,
+			"name": "Atualizar Token",
 			"description": "",
 			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
 			"responses": []
@@ -592,7 +671,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/usuario/list",
+			"url": "http://127.0.0.1/webservice/usuario/list",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
@@ -694,7 +773,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/usuario/create",
+			"url": "http://127.0.0.1/webservice/usuario/create",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
@@ -725,7 +804,7 @@
 				}
 			],
 			"rawModeData": "",
-			"url": "http://127.0.0.1/web/usuario/deletar",
+			"url": "http://127.0.0.1/webservice/usuario/deletar",
 			"responses": [],
 			"pathVariableData": [],
 			"queryParams": [],
