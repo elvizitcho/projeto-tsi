@@ -1,221 +1,481 @@
 {
-	"variables": [],
-	"info": {
-		"name": "WS - TSI",
-		"_postman_id": "d593b4af-c88d-f16a-c879-9ee9ad489985",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
+	"id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+	"name": "WS - TSI",
+	"description": "",
+	"order": [
+		"4eab6781-be4a-dd92-9711-c0b21219f706"
+	],
+	"folders": [
 		{
-			"name": "Usuário",
+			"name": "Cômodo",
 			"description": "",
-			"item": [
-				{
-					"name": "Criar Usuário",
-					"request": {
-						"url": "http://127.0.0.1/web/usuario/create",
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "permissao",
-									"value": "5bd8e9fd0664a",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "nome",
-									"value": "Rafaela",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "usuario",
-									"value": "rafaela",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "senha",
-									"value": "123456",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Listar Usuário",
-					"request": {
-						"url": "http://127.0.0.1/web/usuario/list",
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "permissao",
-									"value": "5bd8e9fd0664a",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "page",
-									"value": "1",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "size",
-									"value": "5",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "filter",
-									"value": "Kevin",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Detalhes Usuário",
-					"request": {
-						"url": "http://127.0.0.1/web/usuario/detalhes",
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "permissao",
-									"value": "5bd8e9fd0664a",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "id",
-									"value": "1",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Deletar Usuário",
-					"request": {
-						"url": "http://127.0.0.1/web/usuario/deletar",
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "permissao",
-									"value": "5bd8e9fd0664a",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "id",
-									"value": "1",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Atualizar Usuário",
-					"request": {
-						"url": "http://127.0.0.1/web/usuario/update",
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "permissao",
-									"value": "5bd8e9fd0664a",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "nome",
-									"value": "Rafael",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "usuario",
-									"value": "rafinha2",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "senha",
-									"value": "123456",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "id",
-									"value": "1",
-									"description": "",
-									"type": "text"
-								}
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				}
-			]
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"order": [
+				"73c548d9-ed0a-ed26-c891-0dce79610ff0",
+				"b4714043-0cdc-945b-a63f-61e305417b2b",
+				"c3eb140d-399b-c768-2b94-f7cd05a4f455",
+				"a44b9bc5-f345-b4e6-c295-250726c0fc65",
+				"0b102792-8ede-3fb5-93d5-20bb1afa09ca"
+			],
+			"owner": "5796404",
+			"folders_order": [],
+			"id": "0f3a8eb0-d67b-d297-9108-1e3935f68414"
 		},
 		{
-			"name": "Login",
-			"request": {
-				"url": "http://127.0.0.1/web/login/validaLogin",
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "usuario",
-							"value": "rafael3",
-							"description": "",
-							"type": "text"
-						},
-						{
-							"key": "senha",
-							"value": "123456",
-							"description": "",
-							"type": "text"
-						}
-					]
+			"id": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+			"name": "Usuário",
+			"description": "",
+			"order": [
+				"ba3bb70e-c2d2-8fb8-eb52-e43f387b92a4",
+				"b640566c-6a5f-3e23-2887-2d63d7cc5870",
+				"a14bf087-c15b-3c02-e976-3157a0b6dddf",
+				"c036c3a9-d166-c74a-eb6b-a459cfa5589b",
+				"464a2d4f-456c-4cd0-8825-2fc164be457c"
+			],
+			"folders_order": [],
+			"owner": "5796404",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d"
+		}
+	],
+	"folders_order": [
+		"e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+		"0f3a8eb0-d67b-d297-9108-1e3935f68414"
+	],
+	"timestamp": 0,
+	"owner": "5796404",
+	"public": false,
+	"requests": [
+		{
+			"id": "0b102792-8ede-3fb5-93d5-20bb1afa09ca",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/comodo/update",
+			"folder": "0f3a8eb0-d67b-d297-9108-1e3935f68414",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"key": "nome",
+					"value": "quarto",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541455051046,
+			"name": "Atualizar Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "464a2d4f-456c-4cd0-8825-2fc164be457c",
+			"name": "Atualizar Usuário",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "5bd8e9fd0664a",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "nome",
+					"value": "Rafael",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "usuario",
+					"value": "rafinha2",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "senha",
+					"value": "123456",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/usuario/update",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "4eab6781-be4a-dd92-9711-c0b21219f706",
+			"name": "Login",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "usuario",
+					"value": "rafael3",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "senha",
+					"value": "123456",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/login/validaLogin",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d"
+		},
+		{
+			"id": "73c548d9-ed0a-ed26-c891-0dce79610ff0",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/comodo/create",
+			"folder": "0f3a8eb0-d67b-d297-9108-1e3935f68414",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nome",
+					"value": "sala",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541454497333,
+			"name": "Criar Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "a14bf087-c15b-3c02-e976-3157a0b6dddf",
+			"name": "Detalhes Usuário",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "5bd8e9fd0664a",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/usuario/detalhes",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "a44b9bc5-f345-b4e6-c295-250726c0fc65",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/comodo/detalhes",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541454748115,
+			"name": "Detalhes Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "b4714043-0cdc-945b-a63f-61e305417b2b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/comodo/list",
+			"folder": "0f3a8eb0-d67b-d297-9108-1e3935f68414",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "5",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "filter",
+					"value": "sala",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541454672766,
+			"name": "Listar Cômodos",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "b640566c-6a5f-3e23-2887-2d63d7cc5870",
+			"name": "Listar Usuário",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "5bd8e9fd0664a",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "page",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "size",
+					"value": "5",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "filter",
+					"value": "Kevin",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/usuario/list",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "ba3bb70e-c2d2-8fb8-eb52-e43f387b92a4",
+			"name": "Criar Usuário",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "5bd8e9fd0664a",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "nome",
+					"value": "Rafaela",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "usuario",
+					"value": "rafaela",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "senha",
+					"value": "123456",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/usuario/create",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "c036c3a9-d166-c74a-eb6b-a459cfa5589b",
+			"name": "Deletar Usuário",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "5bd8e9fd0664a",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://127.0.0.1/web/usuario/deletar",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "c3eb140d-399b-c768-2b94-f7cd05a4f455",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/comodo/deletar",
+			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541454804229,
+			"name": "Deletar Cômodos",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
 		}
 	]
 }
