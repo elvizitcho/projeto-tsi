@@ -22,6 +22,21 @@
 			"id": "0f3a8eb0-d67b-d297-9108-1e3935f68414"
 		},
 		{
+			"name": "Dispositivo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"order": [
+				"54bc263a-3216-6a6e-d16a-a6f1332d14c0",
+				"b84ba514-8cd2-883e-f1b6-e5a1f1caa3c5",
+				"740787c7-41b1-7c73-1e32-0540897d7699",
+				"1de44505-431e-72b0-cdde-dbe0ff43aa40",
+				"266b276a-efc5-b7f6-c55a-f15e7c1ef3f5"
+			],
+			"owner": "5796404",
+			"folders_order": [],
+			"id": "77ff3932-b292-594b-b7ba-3939c71ddc24"
+		},
+		{
 			"id": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
 			"name": "Usuário",
 			"description": "",
@@ -39,7 +54,8 @@
 	],
 	"folders_order": [
 		"e2f83f1c-0ac7-78af-74fa-e7178b0b002b",
-		"0f3a8eb0-d67b-d297-9108-1e3935f68414"
+		"0f3a8eb0-d67b-d297-9108-1e3935f68414",
+		"77ff3932-b292-594b-b7ba-3939c71ddc24"
 	],
 	"timestamp": 0,
 	"owner": "5796404",
@@ -86,6 +102,114 @@
 			"helperAttributes": {},
 			"time": 1541455051046,
 			"name": "Atualizar Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "1de44505-431e-72b0-cdde-dbe0ff43aa40",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/dispositivo/detalhes",
+			"folder": "77ff3932-b292-594b-b7ba-3939c71ddc24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541457803677,
+			"name": "Detalhes Dispositivo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "266b276a-efc5-b7f6-c55a-f15e7c1ef3f5",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/dispositivo/update",
+			"folder": "77ff3932-b292-594b-b7ba-3939c71ddc24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nome",
+					"value": "TV",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "id",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comodo_id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "tipo",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "potencia",
+					"value": "80",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "porta",
+					"value": "23",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541457939697,
+			"name": "Atualizar Dispositivo",
 			"description": "",
 			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
 			"responses": []
@@ -170,6 +294,79 @@
 			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d"
 		},
 		{
+			"id": "54bc263a-3216-6a6e-d16a-a6f1332d14c0",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/dispositivo/create",
+			"folder": "77ff3932-b292-594b-b7ba-3939c71ddc24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "nome",
+					"value": "televisão",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comodo_id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "tipo",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "potencia",
+					"value": "90",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "porta",
+					"value": "33",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541457593445,
+			"name": "Criar Dispositivo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
 			"id": "73c548d9-ed0a-ed26-c891-0dce79610ff0",
 			"headers": "",
 			"headerData": [],
@@ -203,6 +400,41 @@
 			"helperAttributes": {},
 			"time": 1541454497333,
 			"name": "Criar Cômodo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
+		},
+		{
+			"id": "740787c7-41b1-7c73-1e32-0540897d7699",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/dispositivo/deletar",
+			"folder": "77ff3932-b292-594b-b7ba-3939c71ddc24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text"
+				},
+				{
+					"key": "id",
+					"value": "1",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541457785099,
+			"name": "Deletar Dispositivo",
 			"description": "",
 			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
 			"responses": []
@@ -367,6 +599,65 @@
 			"headerData": [],
 			"collection_id": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
 			"folder": "e2f83f1c-0ac7-78af-74fa-e7178b0b002b"
+		},
+		{
+			"id": "b84ba514-8cd2-883e-f1b6-e5a1f1caa3c5",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1/webservice/dispositivo/list",
+			"folder": "77ff3932-b292-594b-b7ba-3939c71ddc24",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "permissao",
+					"value": "default",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "5",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "filter",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comodo_id",
+					"value": "3",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1541457757187,
+			"name": "Listar Dispositivo",
+			"description": "",
+			"collectionId": "6e248e7c-2c54-cf3e-7814-2ff41cfc854d",
+			"responses": []
 		},
 		{
 			"id": "ba3bb70e-c2d2-8fb8-eb52-e43f387b92a4",
