@@ -12,18 +12,17 @@ class Usuario_Model extends CI_Model {
         				->update('usuarios', $data);
     }
 
-    public function list($page, $size, $filter) {
-    	return $this->db->select('id, nome, usuario')
-    					->where('status', 1)
-        				->group_start()
-    						->where('id', $filter)
-    						->or_like('nome', $filter)
-    						->or_like('usuario', $filter)
-						->group_end()
-    					->from('usuarios')
-    					->limit($size, $page * $size)
-    					->get()
-    					->result();
+    public function list($filter) {
+        return $this->db->select('id, nome, usuario')
+                        ->where('status', 1)
+                        ->group_start()
+                            ->where('id', $filter)
+                            ->or_like('nome', $filter)
+                            ->or_like('usuario', $filter)
+                        ->group_end()
+                        ->from('usuarios')
+                        ->get()
+                        ->result();
     }
 
     public function detalhes($id) {

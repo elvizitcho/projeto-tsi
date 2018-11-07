@@ -70,7 +70,7 @@ class Usuario extends CI_Controller {
         $uniq = $usuario != null && $usuario->usuario != $this->input->post('usuario') ? '|is_unique[usuarios.usuario]' : '';
 
         $this->form_validation->set_rules('usuario', 'Usuário', 'required|min_length[5]|max_length[32]' . $uniq);
-        $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[5]|max_length[32]');
+        $this->form_validation->set_rules('senha', 'Senha', 'min_length[5]|max_length[32]');
 
         if ($this->form_validation->run() == FALSE) {
             die(json_encode(array(
@@ -82,9 +82,12 @@ class Usuario extends CI_Controller {
         $usuario = array(
             'nome'      => $this->input->post('nome'),
             'usuario'   => $this->input->post('usuario'),
-            'senha'     => md5($this->input->post('senha')),
             'status'    => 1
         );
+
+        if ($this->input->post('senha') != null) {
+            $usuario['senha'] = md5($this->input->post('senha'));
+        }
 
         $this->load->model('Usuario_Model', 'model');
 
@@ -105,13 +108,11 @@ class Usuario extends CI_Controller {
     public function list() {
         $this->load->model('Usuario_Model', 'model');
 
-        $page   = $this->input->post('page') == null ? 0 : $this->input->post('page');
-        $size   = $this->input->post('size') == null ? 10 : $this->input->post('size');
         $filter = $this->input->post('filter') == null ? '' : $this->input->post('filter');
 
         die(json_encode(array(
             'sucesso' => true,
-            'dados'   => $this->model->list($page, $size, $filter)
+            'dados'   => $this->model->list($filter)
         )));
     }
 
