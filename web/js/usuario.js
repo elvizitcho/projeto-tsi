@@ -85,6 +85,13 @@ function deletar(id) {
 
             if (retorno.sucesso) {
                 toastr.success('Usuário removido com sucesso');
+
+                if (id == sessionStorage.getItem("id")) {
+                    sair();
+
+                    return;
+                }
+
                 carregaUsuarios();
             } else {
                 toastr.danger(retorno.mensagem);
