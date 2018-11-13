@@ -1,7 +1,23 @@
+body {
+	background-color: #F2F2F2;
+}
+
 .btn, .form-control {
     border-radius: 0!important
 }
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.bg-purple {
+	background-color: #9370DB
+}
+
+.bg-light-blue {
+	background-color: #87CEFA
+}
+
+.bg-brown {
+	background-color: #A0522D
 }
