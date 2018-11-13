@@ -104,11 +104,11 @@ class Dispositivo extends CI_Controller {
         $page          = $this->input->post('page') == null ? 0 : $this->input->post('page');
         $size          = $this->input->post('size') == null ? 10 : $this->input->post('size');
         $filter        = $this->input->post('filter') == null ? '' : $this->input->post('filter');
-        $dispositivoId = $this->input->post('dispositivo');
+        $comodoId      = $this->input->post('comodo_id');
 
         die(json_encode(array(
             'sucesso' => true,
-            'dados'   => $this->model->list($page, $size, $filter, $dispositivoId)
+            'dados'   => $this->model->list($page, $size, $filter, $comodoId)
         )));
     }
 

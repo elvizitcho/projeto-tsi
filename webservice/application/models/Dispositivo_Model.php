@@ -22,7 +22,7 @@ class Dispositivo_Model extends CI_Model {
     						->or_like('dispositivos.nome', $filter)
     						->or_like('comodos.nome', $filter)
 						->group_end();
-        
+
         if ($comodo != null) {
             $this->db->where('comodo_id', $comodo);
         }
