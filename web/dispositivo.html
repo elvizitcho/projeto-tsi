@@ -33,8 +33,8 @@
                         <a class="dropdown-item" href="token.html">Tokens</a>
                         <div class="dropdown-divider"></div>
                         <h6 class="dropdown-header">Outros</h6>
-                        <a class="dropdown-item active" href="comodo.html">Cômodos</a>
-                        <a class="dropdown-item" href="dispositivo.html">Dispositivos</a>
+                        <a class="dropdown-item" href="comodo.html">Cômodos</a>
+                        <a class="dropdown-item active" href="dispositivo.html">Dispositivos</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -55,20 +55,21 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <h5 class="card-title">Gerência de Cômodos</h5>
+                                <h5 class="card-title">Gerência de Dispositivos</h5>
                             </div>
                             <div class="col-12 col-sm-6 text-right">
-                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroComodo">Adicionar</a>
+                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroDispositivo">Adicionar</a>
                             </div>
                         </div>
 
                         <div class="row mt-3">
                             <div class="col-12">
-                                <table class="table table-striped" id="tabelaComodos">
+                                <table class="table table-striped" id="tabelaDispositivos">
                                     <thead>
                                         <tr>
                                             <th>Cod.</th>
                                             <th>Nome</th>
+                                            <th>Cômodo</th>
                                             <th>Ações</th>
                                         </tr>
                                     </thead>
@@ -83,12 +84,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalCadastroComodo" tabindex="-1" role="dialog" aria-labelledby="modalCadastroComodoLabel" aria-hidden="true">
-        <form class="modal-dialog" id="modalCadastroComodo-form">
+    <div class="modal fade" id="modalCadastroDispositivo" tabindex="-1" role="dialog" aria-labelledby="modalCadastroDispositivoLabel" aria-hidden="true">
+        <form class="modal-dialog" id="modalCadastroDispositivo-form">
             <input type="hidden" name="id" id="id">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalCadastroComodoLabel">Cadastro de cômodo</h5>
+                    <h5 class="modal-title" id="modalCadastroDispositivoLabel">Cadastro de dispositivo</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -99,6 +100,39 @@
                             <div class="form-group">
                                 <label for="nome">Nome:</label>
                                 <input type="text" class="form-control" name="nome" id="nome">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="comodo">Cômodo:</label>
+                                <select class="form-control" name="comodo" id="comodo"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="tipo">Tipo de dispositivo:</label>
+                                <select class="form-control" name="tipo" id="tipo">
+                                    <option value="1">Lampada</option>
+                                    <option value="2">Eletrodoméstico</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="potencia">Potência (Watts):</label>
+                                <input type="text" class="form-control" name="potencia" id="potencia">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="porta">Porta do Arduino:</label>
+                                <input type="text" class="form-control" name="porta" id="porta">
                             </div>
                         </div>
                     </div>
@@ -118,7 +152,7 @@
 
     <script src="js/generic.js"></script>
 
-    <script src="js/comodo.js"></script>
+    <script src="js/dispositivo.js"></script>
 </body>
 
 </html>
