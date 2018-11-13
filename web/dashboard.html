@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>eNove - Login</title>
+    <title>eNove - Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
 </head>
 
@@ -48,10 +49,92 @@
         </div>
     </nav>
 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-3">
+                                <div class="card">
+                                    <div class="card-body bg-success text-white">
+                                        <h5 class="card-title">Temperatura</h5>
+                                        <h1>31 ºC</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card">
+                                    <div class="card-body bg-light-blue text-white">
+                                        <h5 class="card-title">Umidade do Ar</h5>
+                                        <h1>31 ºC</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card">
+                                    <div class="card-body bg-brown text-white">
+                                        <h5 class="card-title">Umidade do Solo</h5>
+                                        <h1>31 ºC</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card">
+                                    <div class="card-body bg-purple text-white">
+                                        <h5 class="card-title">Ultravioleta</h5>
+                                        <h1>31 ºC</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="card-title">Geral</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6">
+                                                <input type="checkbox" class="js-switch" checked />
+                                                Garagem
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <input type="checkbox" class="js-switch" checked />
+                                                Sistema de Alarme
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <h5 class="card-title">Cômodos</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <select name="comodo" id="comodo" class="form-control" onchange="carregaDispositivos(this.value)"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="dispositivos"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
 
     <script src="js/generic.js"></script>
 
