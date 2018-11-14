@@ -163,10 +163,44 @@ class Dispositivo extends CI_Controller {
     }
 
     public function ligar() {
-        echo 'Em construção...';
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'ID', 'required|is_natural');
+
+        if ($this->form_validation->run() == FALSE) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => validation_errors('<p class="red-text text-darken-2">', '</p>')
+            )));
+        }
+
+        $id = $this->input->post('id');
+
+        $this->load->model('Dispositivo_Model', 'model');
+
+        die(json_encode(array(
+            'sucesso' => true,
+            'dados'   => $this->model->update($id, array('ligado' => 1))
+        )));
     }
 
     public function desligar() {
-        echo 'Em construção...';
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'ID', 'required|is_natural');
+
+        if ($this->form_validation->run() == FALSE) {
+            die(json_encode(array(
+                'sucesso'  => false,
+                'mensagem' => validation_errors('<p class="red-text text-darken-2">', '</p>')
+            )));
+        }
+
+        $id = $this->input->post('id');
+
+        $this->load->model('Dispositivo_Model', 'model');
+
+        die(json_encode(array(
+            'sucesso' => true,
+            'dados'   => $this->model->update($id, array('ligado' => 0))
+        )));
     }
 }

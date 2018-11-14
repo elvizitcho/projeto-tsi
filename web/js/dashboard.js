@@ -62,7 +62,7 @@ function carregaDispositivos(comodoId) {
             $.each(retorno.dados, function(key, value) {
                 $('#dispositivos').append(`
                     <div class="col-12 col-sm-6 col-md-3">
-                        <input type="checkbox" class="js-switch" onchange="alteraStatusDispositivo(${value.id})" />
+                        <input type="checkbox" class="js-switch" onchange="alteraStatusDispositivo(${value.id}, this.checked)" ${value.ligado == 1 ? 'checked' : ''} />
                         ${value.nome}
                     </div>`);
             });
@@ -76,6 +76,30 @@ function carregaDispositivos(comodoId) {
 			elems.forEach(function(html) {
 			    var switchery = new Switchery(html);
 			});
+        } catch (e) {
+            toastr.danger("Falha ao se comunicar com o servidor para listar os dispositivos");
+            console.error(e);
+        }
+    });
+}
+
+function alteraStatusDispositivo(id, ativo) {
+    $.ajax({
+        url: `${urlws}dispositivo/${ativo ? 'ligar' : 'desligar'}`,
+        type: 'POST',
+        data: {
+            permissao: sessionStorage.getItem("permissao"),
+            id: id
+        }
+    }).done(retorno => {
+        try {
+            retorno = JSON.parse(retorno);
+
+            if (retorno.sucesso) {
+                toastr.success(`Dispositivo ${ativo ? 'ligado' : 'desligado'} com sucesso`);
+            } else {
+                toastr.danger(retorno.mensagem);
+            }
         } catch (e) {
             toastr.danger("Falha ao se comunicar com o servidor para listar os dispositivos");
             console.error(e);
