@@ -1,15 +1,13 @@
-CREATE DATABASE  IF NOT EXISTS `enove` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `enove`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: 127.0.0.1    Database: enove
+-- Host: localhost    Database: enove
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.26-MariaDB
+-- Server version	10.1.26-MariaDB-0+deb9u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -29,7 +27,7 @@ CREATE TABLE `comodos` (
   `nome` varchar(64) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '1 -> Ativo\n0 -> Inativo',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +36,7 @@ CREATE TABLE `comodos` (
 
 LOCK TABLES `comodos` WRITE;
 /*!40000 ALTER TABLE `comodos` DISABLE KEYS */;
-INSERT INTO `comodos` VALUES (1,'sala',0),(2,'sala',1),(3,'quarto',1);
+INSERT INTO `comodos` VALUES (1,'sala',0),(2,'Sala',1),(3,'Quarto',1),(4,'Cozinha',1),(5,'Subsolo',1);
 /*!40000 ALTER TABLE `comodos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +57,7 @@ CREATE TABLE `dispositivos` (
   `ligado` int(11) NOT NULL DEFAULT '0' COMMENT '1 -> ligado\n0 -> desligado',
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '1 -> Atvo\n0 -> Inativo',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +66,7 @@ CREATE TABLE `dispositivos` (
 
 LOCK TABLES `dispositivos` WRITE;
 /*!40000 ALTER TABLE `dispositivos` DISABLE KEYS */;
+INSERT INTO `dispositivos` VALUES (1,'Televisão 50\"',2,2,980.00,8,0,1),(2,'Cadeira Elétrica',5,2,720.00,666,0,1);
 /*!40000 ALTER TABLE `dispositivos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,14 +98,6 @@ LOCK TABLES `usuarios` WRITE;
 INSERT INTO `usuarios` VALUES (1,'Administrador','admin','21232f297a57a5a743894a0e4a801fc3',NULL,1,'default');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'enove'
---
-
---
--- Dumping routines for database 'enove'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -117,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-05 20:19:47
+-- Dump completed on 2018-11-14 20:15:01
