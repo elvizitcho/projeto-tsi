@@ -3,6 +3,8 @@ let configuracoesSwtichery = {
     secondaryColor: '#dc3545',
 };
 
+let garagemSwitch;
+
 if (!logado()) {
     window.location = `${url}`;
 }
@@ -13,6 +15,8 @@ $(document).ready(function() {
 	elems.forEach(function(html) {
 	  var switchery = new Switchery(html, configuracoesSwtichery);
 	});
+
+    garagemSwitch = new Switchery(document.querySelector('.garagem-switch'), configuracoesSwtichery);
 
 	carregaComodoList();
 });
@@ -111,3 +115,15 @@ function alteraStatusDispositivo(id, ativo) {
         }
     });
 }
+
+$('#garagem').on('change', () => {
+    if ($('#garagem').is(':checked')) {
+        garagemSwitch.disable();
+
+        setTimeout(() => {
+            garagemSwitch.enable();
+            
+            $('#garagem').siblings('.switchery').click();
+        }, 8000);
+    }
+});
