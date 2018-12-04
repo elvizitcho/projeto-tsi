@@ -176,6 +176,21 @@ class Dispositivo extends CI_Controller {
         $id = $this->input->post('id');
 
         $this->load->model('Dispositivo_Model', 'model');
+        $this->load->model('Historico_Model', 'historicoModel');
+
+        $dispositivo = $this->model->detalhes($id);
+
+        if ($dispositivo->ligado == '1') {
+            die(json_encode(array(
+                'sucesso' => true,
+                'dados'   => null
+            )));
+        }
+
+        $this->historicoModel->create(array(
+            'dispositivo_id' => $id,
+            'inicio'         => date('Y-m-d H:i:s')
+        ));
 
         die(json_encode(array(
             'sucesso' => true,
@@ -197,6 +212,26 @@ class Dispositivo extends CI_Controller {
         $id = $this->input->post('id');
 
         $this->load->model('Dispositivo_Model', 'model');
+        $this->load->model('Historico_Model', 'historicoModel');
+
+        $dispositivo = $this->model->detalhes($id);
+
+        if ($dispositivo->ligado == '0') {
+            die(json_encode(array(
+                'sucesso' => true,
+                'dados'   => null
+            )));
+        }
+
+        $historico = $this->historicoModel->getUltimoHistoricoDispositivo($id);
+        $horas     = (strtotime(date('Y-m-d H:i:s')) - strtotime($historico->inicio)) / 3600;
+        $kw        = $dispositivo->potencia / 1000;
+
+        $this->historicoModel->update(array(
+            'dispositivo_id' => $id,
+            'fim'            => date('Y-m-d H:i:s'),
+            'consumo'        => ($kw * $horas)
+        ));
 
         die(json_encode(array(
             'sucesso' => true,
