@@ -1,13 +1,13 @@
--- MySQL dump 10.16  Distrib 10.1.26-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.30, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: enove
 -- ------------------------------------------------------
--- Server version	10.1.26-MariaDB-0+deb9u1
+-- Server version	5.6.30-1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -71,6 +71,35 @@ INSERT INTO `dispositivos` VALUES (1,'Televisão 50\"',2,2,980.00,8,0,1),(2,'Cad
 UNLOCK TABLES;
 
 --
+-- Table structure for table `historico`
+--
+
+DROP TABLE IF EXISTS `historico`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `historico` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dispositivo_id` int(11) NOT NULL,
+  `inicio` datetime NOT NULL,
+  `fim` datetime DEFAULT NULL,
+  `consumo` decimal(16,6) DEFAULT NULL COMMENT 'Consumo em kw/h',
+  PRIMARY KEY (`id`),
+  KEY `dispositivo_id` (`dispositivo_id`),
+  CONSTRAINT `historico_ibfk_1` FOREIGN KEY (`dispositivo_id`) REFERENCES `dispositivos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `historico`
+--
+
+LOCK TABLES `historico` WRITE;
+/*!40000 ALTER TABLE `historico` DISABLE KEYS */;
+INSERT INTO `historico` VALUES (1,1,'2018-12-04 20:38:56','2018-12-04 20:39:10',NULL),(2,1,'2018-12-04 20:39:23','2018-12-04 20:42:31',NULL),(3,1,'2018-12-04 20:39:25','2018-12-04 20:42:31',NULL),(4,1,'2018-12-04 20:42:42','2018-12-04 21:10:53',NULL),(5,1,'2018-12-04 21:10:53','2018-12-04 21:10:54',NULL),(6,1,'2018-12-04 21:10:54','2018-12-04 21:10:54',NULL),(7,1,'2018-12-04 20:10:55','2018-12-04 21:11:08',NULL),(8,1,'2018-12-04 20:05:24','2018-12-04 21:11:33',NULL),(9,1,'2018-12-04 20:00:00','2018-12-04 21:12:46',1.190000),(10,1,'2018-12-04 20:00:00','2018-12-04 21:16:55',1.260000),(11,1,'2018-12-04 20:00:00','2018-12-04 21:19:44',1.302311);
+/*!40000 ALTER TABLE `historico` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -108,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-14 20:15:01
+-- Dump completed on 2018-12-04 21:21:29
