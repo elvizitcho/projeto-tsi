@@ -22,4 +22,19 @@ class Historico_Model extends CI_Model {
                         ->first_row();
     }
 
+    public function list($inicio, $fim, $valor) {
+        return $this->db->select('dispositivo.nome                                       AS dispositivo_nome,
+                                  comodo.nome                                            AS comodo_nome,
+                                  COALESCE(SUM(historico.consumo), 0)                    AS consumo,
+                                  (COALESCE(SUM(historico.consumo), 0) * ' . $valor . ') AS valor')
+                        ->from('dispositivos AS dispositivo')
+                        ->join('comodos AS comodo', 'comodo.id = dispositivo.comodo_id')
+                        ->join('historico AS historico', 'historico.dispositivo_id = dispositivo.id
+                                                          AND DATE(historico.inicio) >= "' . $inicio . '"
+                                                          AND DATE(historico.fim) <= "' . $fim . '"', 'LEFT')
+                        ->group_by('dispositivo.id')
+                        ->get()
+                        ->result();
+    }
+
 }
