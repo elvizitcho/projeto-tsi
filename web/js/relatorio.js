@@ -5,6 +5,7 @@ if (!logado()) {
 var backgroundColor = [];
 var borderColor     = [];
 var data            = [];
+var myChart;
 
 $(document).ready(function() {
     $('#inicio, #fim').val(dataAtual());
@@ -67,7 +68,11 @@ function relatorioList() {
 function gerarGrafico() {
     var ctx = document.getElementById("myChart").getContext('2d');
 
-    var myChart = new Chart(ctx, {
+    try {
+        myChart.destroy();
+    } catch (e){};
+
+    myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
@@ -93,5 +98,5 @@ function gerarGrafico() {
 
 function randomColor() {
     var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgb(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ')';
 }
