@@ -19,6 +19,9 @@ $(document).ready(function() {
     garagemSwitch = new Switchery(document.querySelector('.garagem-switch'), configuracoesSwtichery);
 
 	carregaComodoList();
+
+    atualizaMedidas();
+    setInterval(atualizaMedidas, 10000);
 });
 
 function carregaComodoList() {
@@ -116,14 +119,70 @@ function alteraStatusDispositivo(id, ativo) {
     });
 }
 
+function garagem() {
+    $.ajax({
+        url: `${urlws}dispositivo/garagem`,
+        type: 'POST',
+        data: {
+            permissao: sessionStorage.getItem("permissao"),
+        }
+    });
+}
+
+function sistemaAlarme() {
+    $.ajax({
+        url: `${urlws}dispositivo/alarme`,
+        type: 'POST',
+        data: {
+            permissao: sessionStorage.getItem("permissao"),
+            status: $('#alarme-switch').is(':checked') ? 0 : 1
+        }
+    });
+}
+
 $('#garagem').on('change', () => {
     if ($('#garagem').is(':checked')) {
         garagemSwitch.disable();
+        garagem();
 
         setTimeout(() => {
             garagemSwitch.enable();
-            
+
             $('#garagem').siblings('.switchery').click();
-        }, 8000);
+        }, 9000);
     }
 });
+
+function atualizaMedidas() {
+    $.ajax({
+        url: `${urlws}dispositivo/getMedidas`,
+        type: 'POST',
+        data: {
+            permissao: sessionStorage.getItem("permissao"),
+            status: $('#alarme-switch').is(':checked') ? 1 : 0
+        }
+    }).done(retorno => {
+        try {
+            retorno = JSON.parse(retorno);
+
+            $('#sensor-us').html(retorno.US);
+            $('#sensor-uv').html(retorno.UV);
+
+            $('#sensor-c').html(retorno.C == 1 ? 'Não' : 'Sim');
+            $('#sensor-f').html(retorno.F == 1 ? 'Não' : 'Sim');
+            $('#sensor-i').html(retorno.I == 1 ? 'Não' : 'Sim');
+            $('#sensor-v').html(retorno.V == 1 ? 'Não' : 'Sim');
+
+            let alarmeLigado = retorno.SA == 0;
+
+            if ((alarmeLigado && !$('#alarme-switch').is(':checked')) ||
+                (!alarmeLigado && $('#alarme-switch').is(':checked'))) {
+
+                $('#alarme-switch').siblings('.switchery').click();
+            }
+        } catch (e) {
+            toastr.danger("Falha ao se comunicar com o servidor para listar os dispositivos");
+            console.error(e);
+        }
+    });
+}

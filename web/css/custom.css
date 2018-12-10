@@ -11,7 +11,11 @@ body {
 }
 
 .bg-purple {
-	background-color: #9370DB
+    background-color: #9370DB
+}
+
+.bg-dark {
+	background-color: #696a6b
 }
 
 .bg-light-blue {

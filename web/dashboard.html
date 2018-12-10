@@ -59,7 +59,7 @@
                                 <div class="card shadow">
                                     <div class="card-body bg-success text-white">
                                         <h5 class="card-title">Temperatura</h5>
-                                        <h1>31 ºC</h1>
+                                        <h1>-- ºC</h1>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <div class="card shadow">
                                     <div class="card-body bg-light-blue text-white">
                                         <h5 class="card-title">Umidade do Ar</h5>
-                                        <h1>31 ºC</h1>
+                                        <h1>--%</h1>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                 <div class="card shadow">
                                     <div class="card-body bg-brown text-white">
                                         <h5 class="card-title">Umidade do Solo</h5>
-                                        <h1>31 ºC</h1>
+                                        <h1><span id="sensor-us">0</span>%</h1>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,37 @@
                                 <div class="card shadow">
                                     <div class="card-body bg-purple text-white">
                                         <h5 class="card-title">Ultravioleta</h5>
-                                        <h1>31 ºC</h1>
+                                        <h1><span id="sensor-uv">0</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12 col-md-3">
+                                <div class="card shadow">
+                                    <div class="card-body bg-dark text-white">
+                                        <h5 class="card-title">Chovendo: <span id="sensor-c">Não</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card shadow">
+                                    <div class="card-body bg-dark text-white">
+                                        <h5 class="card-title">Fogo: <span id="sensor-f">Não</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card shadow">
+                                    <div class="card-body bg-dark text-white">
+                                        <h5 class="card-title">Intruso: <span id="sensor-i">Não</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <div class="card shadow">
+                                    <div class="card-body bg-dark text-white">
+                                        <h5 class="card-title">Visita: <span id="sensor-v">Não</span></h5>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +133,7 @@
                                                 Garagem
                                             </div>
                                             <div class="col-12 col-sm-6">
-                                                <input type="checkbox" class="js-switch" checked />
+                                                <input type="checkbox" class="js-switch" id="alarme-switch" onchange="sistemaAlarme()" checked />
                                                 Sistema de Alarme
                                             </div>
                                         </div>

@@ -187,6 +187,12 @@ class Dispositivo extends CI_Controller {
             )));
         }
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, ARDUINO_IP . 'pino=' . $dispositivo->porta . '&status=1');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
         $this->historicoModel->create(array(
             'dispositivo_id' => $id,
             'inicio'         => date('Y-m-d H:i:s')
@@ -223,6 +229,12 @@ class Dispositivo extends CI_Controller {
             )));
         }
 
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, ARDUINO_IP . 'pino=' . $dispositivo->porta . '&status=0');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
         $historico = $this->historicoModel->getUltimoHistoricoDispositivo($id);
         $horas     = (strtotime(date('Y-m-d H:i:s')) - strtotime($historico->inicio)) / 3600;
         $kw        = $dispositivo->potencia / 1000;
@@ -237,5 +249,33 @@ class Dispositivo extends CI_Controller {
             'sucesso' => true,
             'dados'   => $this->model->update($id, array('ligado' => 0))
         )));
+    }
+
+    public function garagem() {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, ARDUINO_IP . 'pino=103');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+    }
+
+    public function alarme() {
+        $this->load->library('form_validation');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, ARDUINO_IP . 'pino=101&status=' . $this->input->post('status'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+    }
+
+    public function getMedidas() {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, ARDUINO_IP . 'pino=102');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        curl_close($ch);
+
+        echo $output;
     }
 }
