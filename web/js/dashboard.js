@@ -18,7 +18,8 @@ $(document).ready(function() {
 
     garagemSwitch = new Switchery(document.querySelector('.garagem-switch'), configuracoesSwtichery);
 
-	carregaComodoList();
+	// carregaComodoList();
+    carregaDispositivos();
 
     atualizaMedidas();
     setInterval(atualizaMedidas, 10000);
@@ -53,13 +54,13 @@ function carregaComodoList() {
     });
 }
 
-function carregaDispositivos(comodoId) {
+function carregaDispositivos() {
     $.ajax({
         url: `${urlws}dispositivo/list`,
         type: 'POST',
         data: {
             permissao: sessionStorage.getItem("permissao"),
-            comodo_id: comodoId
+            // comodo_id: comodoId
         }
     }).done(retorno => {
         try {
@@ -73,9 +74,9 @@ function carregaDispositivos(comodoId) {
             $('#dispositivos').html('');
             $.each(retorno.dados, function(key, value) {
                 $('#dispositivos').append(`
-                    <div class="col-12 col-sm-6 col-md-3">
+                    <div class="col-12 col-sm-6 col-md-3 pb-3 pt-3">
                         <input type="checkbox" class="js-switch" onchange="alteraStatusDispositivo(${value.id}, this.checked)" ${value.ligado == 1 ? 'checked' : ''} />
-                        ${value.nome}
+                        <b>${value.comodo_nome}</b> - ${value.nome}
                     </div>`);
             });
 
@@ -181,8 +182,8 @@ function atualizaMedidas() {
                 $('#alarme-switch').siblings('.switchery').click();
             }
         } catch (e) {
-            toastr.danger("Falha ao se comunicar com o servidor para listar os dispositivos");
             console.error(e);
+            toastr.danger("Falha ao se comunicar com o servidor para listar os dispositivos");
         }
     });
 }
